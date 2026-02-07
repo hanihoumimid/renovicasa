@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renovicasa - Plombier & Rénovation Salle de Bain à Pontault-Combault</title>
+    <meta name="description" content="Renovicasa : Votre expert en plomberie et rénovation de salle de bain à Pontault-Combault et en Île-de-France. Dépannage rapide, installation sanitaire, création de réseaux d'eau. Demandez votre devis gratuit.">
+    <meta name="keywords" content="plombier Pontault-Combault, rénovation salle bain 77, plomberie Île-de-France, dépannage plomberie, installation sanitaires, création réseaux d'eau, Renovicasa">
+    
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- AOS CSS & JS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Alpine.js CDN -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-900 leading-normal tracking-tight">
+    
+    <!-- Header Sticky -->
+    <header class="bg-white shadow-lg sticky top-0 z-50" x-data="{ open: false }">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-2">
+                <i class="fas fa-faucet text-blue-600 text-3xl"></i>
+                <span class="text-3xl font-bold text-gray-900">Renovicasa</span>
+            </a>
+
+            <!-- Navigation (Desktop) -->
+            <nav class="hidden md:flex space-x-8 text-lg font-semibold">
+                <a href="#hero" class="text-gray-700 hover:text-blue-600 transition duration-300">Accueil</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600 transition duration-300">À Propos</a>
+                <a href="#services" class="text-gray-700 hover:text-blue-600 transition duration-300">Services</a>
+                <a href="#realisations" class="text-gray-700 hover:text-blue-600 transition duration-300">Réalisations</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 transition duration-300">Contact</a>
+            </nav>
+
+            <!-- CTA Button (Desktop) -->
+            <div class="hidden md:block">
+                <a href="tel:0650204315" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 shadow-lg flex items-center">
+                    <i class="fas fa-phone mr-2"></i> 06 50 20 43 15
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button @click="open = !open" class="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600">
+                    <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="open" @click.outside="open = false" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="md:hidden bg-white shadow-xl py-4 space-y-4 text-center border-t border-gray-200">
+            <a href="#hero" @click="open = false" class="block text-lg font-semibold text-gray-700 hover:text-blue-600">Accueil</a>
+            <a href="#about" @click="open = false" class="block text-lg font-semibold text-gray-700 hover:text-blue-600">À Propos</a>
+            <a href="#services" @click="open = false" class="block text-lg font-semibold text-gray-700 hover:text-blue-600">Services</a>
+            <a href="#realisations" @click="open = false" class="block text-lg font-semibold text-gray-700 hover:text-blue-600">Réalisations</a>
+            <a href="#contact" @click="open = false" class="block text-lg font-semibold text-gray-700 hover:text-blue-600">Contact</a>
+            <a href="tel:0650204315" class="block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 mx-auto w-1/2 rounded-full transition duration-300 shadow-lg flex items-center justify-center">
+                <i class="fas fa-phone mr-2"></i> Appeler
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative bg-blue-600 text-white py-20 md:py-32 overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1584622050111-993a426fbf0a?auto=format&fit=crop&w=1600&q=80" alt="Salle de bain rénovée" class="w-full h-full object-cover opacity-30">
+        </div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight" data-aos="fade-up" data-aos-duration="1000">
+                Renovicasa : Votre Expert en <span class="text-blue-200">Plomberie & Rénovation Salle de Bain</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 font-light" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                À Pontault-Combault et dans toute l'Île-de-France – Intervention rapide et devis gratuit.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="400">
+                <a href="#contact" class="bg-white text-blue-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-full shadow-lg transition duration-300 text-lg">
+                    <i class="fas fa-clipboard-list mr-2"></i> Demander un Devis Gratuit
+                </a>
+                <a href="tel:0650204315" class="bg-blue-800 text-white hover:bg-blue-900 font-bold py-4 px-8 rounded-full shadow-lg transition duration-300 text-lg">
+                    <i class="fas fa-phone mr-2"></i> Appelez-nous : 06 50 20 43 15
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="md:flex md:items-center md:space-x-12">
+                <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right" data-aos-duration="1000">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Qui sommes-nous ? Votre partenaire de confiance.</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Renovicasa est votre entreprise de plomberie et de rénovation sanitaire dévouée, basée à Pontault-Combault.
+                        Avec une expertise reconnue, nous accompagnons vos projets de bout en bout, de la conception à la réalisation.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Nous sommes spécialisés dans la pose de douches, baignoires, vasques, la création de réseaux d'eau et d'évacuation, ainsi que les dépannages urgents en plomberie.
+                        Notre engagement ? Professionnalisme, rapidité et une finition impeccable pour des espaces sanitaires fonctionnels et esthétiques.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Basée au 12 Bis avenue des Jacinthes, 77340 Pontault-Combault, Renovicasa (SIRET 79987131400024) est votre interlocuteur unique pour des solutions durables en Île-de-France.
+                    </p>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=80" alt="Équipe Renovicasa en réunion" class="rounded-2xl shadow-xl w-full h-auto object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24 bg-gray-100">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12" data-aos="fade-up" data-aos-duration="1000">
+                Nos Services Plomberie & Rénovation
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center transform hover:scale-105 transition duration-300" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" alt="Rénovation salle de bain" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <i class="fas fa-bath text-blue-600 text-5xl mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Rénovation Salle de Bain</h3>
+                    <p class="text-gray-700">De la conception à la réalisation, nous aménageons votre salle de bain de rêve : pose de sanitaires, création de réseaux d'eau, faïence, et tous les détails pour un espace moderne et fonctionnel.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center transform hover:scale-105 transition duration-300" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1600&q=80" alt="Plomberie générale" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <i class="fas fa-tools text-blue-600 text-5xl mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Plomberie Générale</h3>
+                    <p class="text-gray-700">Installation de nouveaux équipements, réparation de fuites, débouchage de canalisations, vidange de circuits de chauffage... Nous couvrons tous vos besoins en plomberie.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center transform hover:scale-105 transition duration-300" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1581578731117-104529302f24?auto=format&fit=crop&w=800&q=80" alt="Intervention d'urgence" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <i class="fas fa-exclamation-triangle text-blue-600 text-5xl mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Interventions Urgentes</h3>
+                    <p class="text-gray-700">Une fuite, une canalisation bouchée, une panne de chauffe-eau ? Nous intervenons rapidement en Île-de-France pour résoudre vos problèmes de plomberie avec efficacité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Realisations Section -->
+    <section id="realisations" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12" data-aos="fade-up" data-aos-duration="1000">
+                Nos Réalisations Exemplaires
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="relative overflow-hidden rounded-2xl shadow-lg group" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" alt="Rénovation salle de bain moderne" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-blue-600 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-xl font-semibold">Salle de bain contemporaine</p>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-2xl shadow-lg group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1595435934247-5d33b7f92c70?auto=format&fit=crop&w=800&q=80" alt="Installation de plomberie" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-blue-600 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-xl font-semibold">Réseaux d'eau optimisés</p>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-2xl shadow-lg group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1621891333817-2d97c108f7a6?auto=format&fit=crop&w=800&q=80" alt="Technicien en intervention" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-blue-600 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-xl font-semibold">Dépannage professionnel</p>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-2xl shadow-lg group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1584626953330-157d2b5d4ac6?auto=format&fit=crop&w=800&q=80" alt="Projet de salle de bain" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-blue-600 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-xl font-semibold">Pose de baignoire</p>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-2xl shadow-lg group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80" alt="Outils de plomberie" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-blue-600 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-xl font-semibold">Chantier organisé</p>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-2xl shadow-lg group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+                    <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=800&q=80" alt="Installation de douche" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-blue-600 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-xl font-semibold">Douche à l'italienne</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 md:py-24 bg-gray-100">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12" data-aos="fade-up" data-aos-duration="1000">
+                Ce que nos clients disent de nous
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 transform hover:scale-105 transition duration-300" data-aos="fade-up" data-aos-duration="1000">
+                    <p class="text-gray-700 italic mb-6">"Renovicasa a transformé ma vieille salle de bain en un véritable havre de paix. Le travail est d'une qualité exceptionnelle et l'équipe a été très professionnelle et réactive. Je recommande sans hésiter !"</p>
+                    <p class="font-semibold text-gray-900">Marie L. - Pontault-Combault</p>
+                    <div class="text-yellow-500 mt-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 transform hover:scale-105 transition duration-300" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <p class="text-gray-700 italic mb-6">"Suite à une fuite d'eau urgente, Renovicasa est intervenu très rapidement en plein week-end. Le plombier était efficace et rassurant. Problème réglé en un temps record. Un grand merci !"</p>
+                    <p class="font-semibold text-gray-900">Jean-Marc D. - Créteil</p>
+                    <div class="text-yellow-500 mt-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 transform hover:scale-105 transition duration-300" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <p class="text-gray-700 italic mb-6">"J'ai fait appel à Renovicasa pour l'installation complète de mes sanitaires dans une nouvelle construction. Le chantier a été mené avec rigueur et les délais respectés. Un travail de qualité, soigné et propre."</p>
+                    <p class="font-semibold text-gray-900">Sophie P. - Ozoir-la-Ferrière</p>
+                    <div class="text-yellow-500 mt-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-blue-600 text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up" data-aos-duration="1000">
+                Contactez Renovicasa pour un Devis ou une Intervention
+            </h2>
+            <div class="grid md:grid-cols-2 gap-10 items-stretch">
+                <!-- Contact Form -->
+                <div class="bg-white p-8 md:p-10 rounded-2xl shadow-xl text-gray-900" data-aos="fade-right" data-aos-duration="1000">
+                    <h3 class="text-3xl font-bold mb-6 text-blue-600">Demandez votre Devis Gratuit</h3>
+                    <form action="#" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-lg font-medium text-gray-700">Nom Complet</label>
+                            <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg" placeholder="Votre nom" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-lg font-medium text-gray-700">Adresse Email</label>
+                            <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg" placeholder="votre.email@exemple.com" required>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-lg font-medium text-gray-700">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg" placeholder="06 XX XX XX XX" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-lg font-medium text-gray-700">Votre Message</label>
+                            <textarea id="message" name="message" rows="5" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg" placeholder="Décrivez votre projet de salle de bain ou votre besoin en plomberie..." required></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-full shadow-lg transition duration-300 text-xl">
+                                Envoyer ma demande
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Google Map -->
+                <div class="rounded-2xl shadow-xl overflow-hidden" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2629.754898124505!2d2.618683176580907!3d48.78848467130283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e60bb6381e053f%3A0x89d2d02c81a28a1!2s12%20Bis%20Av.%20des%20Jacinthes%2C%2077340%20Pontault-Combault!5e0!3m2!1sfr!2sfr!4v1701358327931!5m2!1sfr!2sfr" 
+                        width="100%" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="h-full min-h-[400px] object-cover"
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 md:py-16">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Contact Info -->
+            <div>
+                <h4 class="text-2xl font-bold text-white mb-6">Renovicasa</h4>
+                <p class="mb-3"><i class="fas fa-map-marker-alt mr-3 text-blue-400"></i> 12 Bis avenue des Jacinthes, 77340 Pontault-Combault</p>
+                <p class="mb-3"><i class="fas fa-phone mr-3 text-blue-400"></i> <a href="tel:0650204315" class="hover:text-white transition duration-300">06 50 20 43 15</a></p>
+                <p class="mb-3"><i class="fas fa-envelope mr-3 text-blue-400"></i> <a href="mailto:contact@renovicasa.fr" class="hover:text-white transition duration-300">contact@renovicasa.fr</a></p>
+                <div class="flex space-x-4 mt-6">
+                    <a href="https://www.instagram.com/renovicasa" target="_blank" aria-label="Instagram Renovicasa" class="text-gray-400 hover:text-white transition duration-300 text-2xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- Add other social media if available -->
+                </div>
+            </div>
+
+            <!-- Horaires -->
+            <div>
+                <h4 class="text-2xl font-bold text-white mb-6">Nos Horaires</h4>
+                <p class="mb-2"><span class="font-semibold">Lundi - Jeudi:</span> 8h-12h & 13h-17h</p>
+                <p class="mb-2"><span class="font-semibold">Vendredi:</span> 8h-12h & 13h-16h</p>
+                <p class="text-gray-400 text-sm mt-4">Interventions urgentes possibles sur rendez-vous en dehors de ces heures.</p>
+            </div>
+
+            <!-- Mentions Légales -->
+            <div>
+                <h4 class="text-2xl font-bold text-white mb-6">Informations Légales</h4>
+                <p class="mb-2">SIRET: 79987131400024</p>
+                <p class="mb-2">Activité NAF: 43.22A (Travaux d'installation d'eau et de gaz en tous locaux)</p>
+                <p class="mb-2">Responsabilité Civile Professionnelle assurée</p>
+                <p class="mb-2"><a href="#" class="hover:text-white transition duration-300">Politique de Confidentialité (RGPD)</a></p>
+                <p class="mb-2"><a href="#" class="hover:text-white transition duration-300">Mentions Légales Complètes</a></p>
+            </div>
+        </div>
+        <div class="mt-12 border-t border-gray-800 pt-8 text-center text-gray-400">
+            <p>&copy; <span x-data="{ year: new Date().getFullYear() }" x-text="year"></span> Renovicasa. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- AOS Initialization -->
+    <script>
+        AOS.init({
+            once: true,
+            duration: 1000,
+        });
+    </script>
+</body>
+</html>
